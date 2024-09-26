@@ -13,6 +13,39 @@ import (
 	tls "github.com/bogdanfinn/utls"
 )
 
+func Test_DisableKeepAlives(t *testing.T) {
+	cj_chrome_124(t)
+}
+
+func cj_chrome_124(t *testing.T) {
+	options := []tls_client.HttpClientOption{
+		tls_client.WithTransportOptions(&tls_client.TransportOptions{
+			DisableKeepAlives: true,
+		}),
+		tls_client.WithClientProfile(profiles.Chrome_124),
+	}
+
+	client, err := tls_client.NewHttpClient(nil, options...)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	req, err := http.NewRequest(http.MethodGet, "https://www.skymark.co.jp/ja/", nil)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	req.Header = defaultHeader
+
+	resp, err := client.Do(req)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	t.Log(resp.StatusCode)
+	//compareResponse(t, "chrome", clientFingerprints[chrome][profiles.Chrome_124.GetClientHelloStr()], resp)
+}
+
 func TestClients(t *testing.T) {
 	t.Log("testing chrome 124")
 	chrome_124(t)
