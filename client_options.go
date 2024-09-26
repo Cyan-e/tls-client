@@ -7,7 +7,7 @@ import (
 	"net"
 	"time"
 
-	http "github.com/bogdanfinn/fhttp"
+	http "github.com/Cyan-e/fhttp"
 	"github.com/bogdanfinn/tls-client/profiles"
 )
 

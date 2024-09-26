@@ -3,7 +3,7 @@ package profiles
 import (
 	"math"
 
-	"github.com/bogdanfinn/fhttp/http2"
+	"github.com/Cyan-e/fhttp/http2"
 	tls "github.com/bogdanfinn/utls"
 )
 

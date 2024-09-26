@@ -12,7 +12,7 @@ import (
 	"sync"
 	"unsafe"
 
-	http "github.com/bogdanfinn/fhttp"
+	http "github.com/Cyan-e/fhttp"
 	tls_client_cffi_src "github.com/bogdanfinn/tls-client/cffi_src"
 	"github.com/google/uuid"
 )

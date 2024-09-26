@@ -10,8 +10,8 @@ import (
 	"sync"
 	"time"
 
-	http "github.com/bogdanfinn/fhttp"
-	"github.com/bogdanfinn/fhttp/httputil"
+	http "github.com/Cyan-e/fhttp"
+	"github.com/Cyan-e/fhttp/httputil"
 	"github.com/bogdanfinn/tls-client/bandwidth"
 	"github.com/bogdanfinn/tls-client/profiles"
 	"golang.org/x/net/proxy"

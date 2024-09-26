@@ -8,7 +8,7 @@ import (
 
 	"github.com/bogdanfinn/tls-client/profiles"
 
-	http "github.com/bogdanfinn/fhttp"
+	http "github.com/Cyan-e/fhttp"
 	tls_client "github.com/bogdanfinn/tls-client"
 	tls "github.com/bogdanfinn/utls"
 )
@@ -19,10 +19,8 @@ func Test_DisableKeepAlives(t *testing.T) {
 
 func cj_chrome_124(t *testing.T) {
 	options := []tls_client.HttpClientOption{
-		tls_client.WithTransportOptions(&tls_client.TransportOptions{
-			DisableKeepAlives: true,
-		}),
 		tls_client.WithClientProfile(profiles.Chrome_124),
+		tls_client.WithProxyUrl("http://127.0.0.1:13120"),
 	}
 
 	client, err := tls_client.NewHttpClient(nil, options...)
@@ -30,12 +28,26 @@ func cj_chrome_124(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	req, err := http.NewRequest(http.MethodGet, "https://www.skymark.co.jp/ja/", nil)
+	req, err := http.NewRequest(http.MethodGet, "https://www.res.skymark.co.jp/reserve2/inputDateAirline", nil)
 	if err != nil {
 		t.Fatal(err)
 	}
 
-	req.Header = defaultHeader
+	req.Header.Set("Accept-Encoding", "gzip, deflate, br, zstd")
+	req.Header.Set("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7")
+	req.Header.Set("sec-ch-ua-mobile", "?0")
+	req.Header.Set("sec-ch-ua-platform", "Window")
+	req.Header.Set("Upgrade-Insecure-Requests", "1")
+	req.Header.Set("Origin", "https://www.skymark.co.jp")
+	req.Header.Set("Sec-Fetch-Site", "same-site")
+	req.Header.Set("Sec-Fetch-Mode", "navigate")
+	req.Header.Set("Sec-Fetch-User", "?1")
+	req.Header.Set("Sec-Fetch-Dest", "document")
+	req.Header.Set("Referer", "https://www.skymark.co.jp/")
+	req.Header.Set("Accept-Language", "zh-CN,zh;q=0.9")
+	req.Header.Set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36")
+	req.Header.Set("sec-ch-ua", `"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"`)
+	//req.Header.Set("connection", "keep-alive")
 
 	resp, err := client.Do(req)
 	if err != nil {
