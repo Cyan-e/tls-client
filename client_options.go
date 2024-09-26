@@ -8,7 +8,7 @@ import (
 	"time"
 
 	http "github.com/Cyan-e/fhttp"
-	"github.com/bogdanfinn/tls-client/profiles"
+	"github.com/Cyan-e/tls-client/profiles"
 )
 
 type HttpClientOption func(config *httpClientConfig)

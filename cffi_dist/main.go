@@ -13,7 +13,7 @@ import (
 	"unsafe"
 
 	http "github.com/Cyan-e/fhttp"
-	tls_client_cffi_src "github.com/bogdanfinn/tls-client/cffi_src"
+	tls_client_cffi_src "github.com/Cyan-e/tls-client/cffi_src"
 	"github.com/google/uuid"
 )
 

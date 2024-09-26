@@ -5,8 +5,8 @@ import (
 	"testing"
 
 	http "github.com/Cyan-e/fhttp"
-	tls_client "github.com/bogdanfinn/tls-client"
-	"github.com/bogdanfinn/tls-client/profiles"
+	tls_client "github.com/Cyan-e/tls-client"
+	"github.com/Cyan-e/tls-client/profiles"
 	"github.com/stretchr/testify/assert"
 )
 

@@ -11,8 +11,8 @@ import (
 
 	http "github.com/Cyan-e/fhttp"
 	"github.com/Cyan-e/fhttp/http2"
-	"github.com/bogdanfinn/tls-client/bandwidth"
-	"github.com/bogdanfinn/tls-client/profiles"
+	"github.com/Cyan-e/tls-client/bandwidth"
+	"github.com/Cyan-e/tls-client/profiles"
 	tls "github.com/bogdanfinn/utls"
 	"golang.org/x/net/proxy"
 )

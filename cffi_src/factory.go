@@ -10,12 +10,12 @@ import (
 	"os"
 	"sync"
 
-	"github.com/bogdanfinn/tls-client/profiles"
+	"github.com/Cyan-e/tls-client/profiles"
 
 	http "github.com/Cyan-e/fhttp"
 	"github.com/Cyan-e/fhttp/cookiejar"
 	"github.com/Cyan-e/fhttp/http2"
-	tls_client "github.com/bogdanfinn/tls-client"
+	tls_client "github.com/Cyan-e/tls-client"
 	tls "github.com/bogdanfinn/utls"
 	"github.com/google/uuid"
 )
